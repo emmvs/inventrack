@@ -2,14 +2,11 @@
 class ItemsController < ApplicationController
   before_action :item_check, only: %i[show edit update destroy]
 
-  def index
-    @items = Item.all
-  end
-
   def show; end
 
   def new
     @item = Item.new
+    @warehouse = Warehouse.find(params[:warehouse_id])
   end
 
   def create
@@ -17,21 +14,21 @@ class ItemsController < ApplicationController
     @warehouse = Warehouse.find(params[:warehouse_id])
     @item.warehouse = @warehouse
     if @item.save
-      redirect_to @item
+      redirect_to warehouse_path(@warehouse)
     else
       render :new
     end
   end
 
-  def edit
+  def edit; end
+
+  def update
     if @item.update(item_params)
-      redirect_to @item, notice: 'Your amazing Item is edited!'
+      redirect_to warehouse_path(@item.warehouse), notice: 'Your amazing Item is edited!'
     else
       render :edit
     end
   end
-
-  def update; end
 
   def destroy
     @item.destroy

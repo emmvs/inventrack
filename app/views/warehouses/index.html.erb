@@ -1,0 +1,21 @@
+<%# app/views/warehouses/index.html.erb %>
+<h1>Welcome to the Inventrack Index Page!</h1>
+
+<h2>🏠 Here are our Amazing Warehouses 🏠</h2>
+
+<div class="flex-container">
+  <div class="grid">
+  <%= link_to "New Warehouse", new_warehouse_path %>
+    <% @warehouses.each do |warehouse| %>
+      <%= link_to warehouse_path(warehouse) do %>
+        <div class="card">
+          <div class="info">
+            <h2 class="title"><%= warehouse.name %></h2>
+            <p class="address"><%= warehouse.address %></p>
+            <p class="capacity"><%= warehouse.capacity %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

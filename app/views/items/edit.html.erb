@@ -1,0 +1,10 @@
+<%# app/views/items/edit.html.erb %>
+<h1>Edit your beautiful Item! 🐝 🎱 📚 🖼</h1>
+
+<%= form_for(@item) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :type_of_item %>
+<%= f.select :type_of_item, ['beehives', 'books', 'clothes', 'computers', 'paintings', 'billard_balls'] %>
+<%= f.submit "Edit Item"%>
+<% end %>

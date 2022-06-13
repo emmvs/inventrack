@@ -11,7 +11,7 @@ puts 'Creating Warehouses & Items... 🐝 🎱 📚 👕'
   Warehouse.create!(
     name: Faker::Name.unique.name,
     address: Faker::Address.street_address,
-    capacity: 1000
+    capacity: rand(1000)
   )
 end
 
