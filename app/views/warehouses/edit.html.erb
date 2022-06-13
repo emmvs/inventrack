@@ -1,0 +1,12 @@
+<%# app/views/warehouses/edit.html.erb %>
+<h1>Edit your beautiful Warehouse! 🏠</h1>
+
+<%= form_for(@warehouse) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :address %>
+<%= f.text_field :address %>
+<%= f.label :capacity %>
+<%= f.number_field :capacity %>
+<%= f.submit "Edit Warehouse"%>
+<% end %>

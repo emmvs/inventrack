@@ -3,7 +3,7 @@ class WarehousesController < ApplicationController
   before_action :warehouse_check, only: %i[show edit update destroy]
 
   def index
-    @warehouses = Warehouse.all
+    @warehouses = Warehouse.all.reverse
   end
 
   def show; end
@@ -21,15 +21,15 @@ class WarehousesController < ApplicationController
     end
   end
 
-  def edit
+  def edit; end
+
+  def update
     if @warehouse.update(warehouse_params)
       redirect_to @warehouse, notice: 'Your amazing warehouse is edited!'
     else
       render :edit
     end
   end
-
-  def update; end
 
   def destroy
     @warehouse.destroy

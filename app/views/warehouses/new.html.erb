@@ -1,0 +1,12 @@
+<%# app/views/warehouses/new.html.erb %>
+<h1>Tell us about your new Warehouse! 🏠</h1>
+
+<%= form_for(@warehouse) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :address %>
+<%= f.text_field :address %>
+<%= f.label :capacity %>
+<%= f.number_field :capacity %>
+<%= f.submit %>
+<% end %>
