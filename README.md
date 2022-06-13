@@ -1,4 +1,4 @@
-# README
+# README INVENTRACK
 
 # Description
 Simple Rails Application to build an inventory tracking web application for a logistics company. You can not only create new warehouses or items but also have the ability to create warehouses and assign the items to specific warehouses.
@@ -24,4 +24,4 @@ and
 bundle install
 ```
 
-and you should be fine ☀️
+and you should be fine ✨
