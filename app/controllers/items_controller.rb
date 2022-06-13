@@ -2,10 +2,6 @@
 class ItemsController < ApplicationController
   before_action :item_check, only: %i[show edit update destroy]
 
-  def index
-    @items = Item.all
-  end
-
   def show; end
 
   def new

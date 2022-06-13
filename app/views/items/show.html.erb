@@ -1,0 +1,14 @@
+<%# app/views/items/show.html.erb %>
+<div class="container">
+  <h1>Welcome to a specific Inventrack Item Show Page!</h1>
+      <div class="info">
+          <h1><%= @item.name %></h1>
+          <h2>This item has the type of:</h4>
+          <h3><%= @item.type_of_item %></h3>
+          <h2>The item is located in this Warehouse:</h4>
+          <h3><%= @item.warehouse.name %></h3>
+          <%= link_to "Update", edit_item_path(@item) %>
+          <%= link_to "Delete", item_path(@item), method: :delete, data: { turbo_method: :delete, confirm: "Do you really want to say bye bye to your beautiful Item?" } %>
+          <%= link_to "Back to the Warehouse", warehouse_path(@item.warehouse) %>
+      </div>
+</div>

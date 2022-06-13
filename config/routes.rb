@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Warehouses with nested Items
   resources :warehouses do
-    resources :items, only: %i[index show new create]
+    resources :items, only: %i[show new create]
   end
 
   # Items
