@@ -1,9 +1,10 @@
 <%# app/views/items/new.html.erb %>
 <h1>Tell us about your new Item! 🐝 🎱 📚 🖼</h1>
-
-<%= form_for [@warehouse, @item] do |f| %>
+<%= form_for @item, url: items_path do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
+<%= f.label :warehouse %>
+<%= f.collection_select :warehouse_id, Warehouse.all, :id, :name %>
 <%= f.label :type_of_item %>
 <%= f.select :type_of_item, ['beehives', 'books', 'clothes', 'computers', 'paintings', 'billard_balls'] %>
 <%= f.submit "New Item" %>
