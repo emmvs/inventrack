@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_134543) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "type_of_item"
+    t.integer "type_of_item"
     t.bigint "warehouse_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
