@@ -1,24 +1,27 @@
-# README
+# README INVENTRACK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Description
+Simple Rails Application to build an inventory tracking web application for a logistics company. You can not only create new warehouses or items but also have the ability to create warehouses and assign the items to specific warehouses.
 
-Things you may want to cover:
+# Created With
+Rails 7.0.3
+ruby "2.7.4"
+gem "faker"
 
-* Ruby version
+# Instructions to install the codebase locally on your machine
 
-* System dependencies
+### Download the project
+Open your terminal and navigate to the folder where you want to download the project.
+Run this command 👇
 
-* Configuration
+```
+git clone git@github.com:emmvs/inventrack.git
+```
 
-* Database creation
+and
 
-* Database initialization
+```
+bundle install
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+and you should be fine ✨
