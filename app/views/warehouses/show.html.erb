@@ -14,6 +14,7 @@
             </li>
             <% end %>
           </ul>
+          <%= link_to "Add new item 🎱 🐝 👕 🖼", new_warehouse_item_path(@warehouse) %>
           <%= link_to "Update", edit_warehouse_path(@warehouse) %>
           <%= link_to "Delete", warehouse_path(@warehouse), method: :delete, data: { turbo_method: :delete, confirm: "Do you really want to say bye bye to your beautiful Warehouse?" } %>
           <%= link_to "Back to all Warehouses", warehouses_path %>

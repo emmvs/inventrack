@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @warehouse = Warehouse.find(params[:warehouse_id])
   end
 
   def create
@@ -13,7 +14,7 @@ class ItemsController < ApplicationController
     @warehouse = Warehouse.find(params[:warehouse_id])
     @item.warehouse = @warehouse
     if @item.save
-      redirect_to @item
+      redirect_to warehouse_path(@warehouse)
     else
       render :new
     end
