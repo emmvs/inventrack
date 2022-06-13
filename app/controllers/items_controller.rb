@@ -20,15 +20,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit
+  def edit; end
+
+  def update
     if @item.update(item_params)
-      redirect_to @item, notice: 'Your amazing Item is edited!'
+      redirect_to warehouse_path(@item.warehouse), notice: 'Your amazing Item is edited!'
     else
       render :edit
     end
   end
-
-  def update; end
 
   def destroy
     @item.destroy

@@ -5,6 +5,6 @@
 <%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :type_of_item %>
-<%= f.collection :type_of_item %>
+<%= f.select :type_of_item, ['beehives', 'books', 'clothes', 'computers', 'paintings', 'billard_balls'] %>
 <%= f.submit "Edit Item"%>
 <% end %>
