@@ -1,0 +1,21 @@
+<%# app/views/warehouses/show.html.erb %>
+<div class="container">
+  <h1>Welcome to a specific Inventrack Show Page!</h1>
+  <div class="main-boxes">
+    <div class="box">
+      <div class="info-box">
+        <div class="header-box">
+          <h1 class="name"><%= @warehouse.name %></h1>
+        </div>
+        <div class="description">
+          <h4 class="address">This warehouse is located in:</h4>
+          <p class="description-text"><%= @warehouse.address %></p>
+          <div>
+            <%= link_to "Update", edit_warehouse_path(@warehouse), class:"btn btn-primary" %>
+            <%= link_to "Delete", warehouse_path(@warehouse), class:"btn btn-secondary", method: :delete, data: { turbo_method: :delete, confirm: "Do you really want to say bye bye?" } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
