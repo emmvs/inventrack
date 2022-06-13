@@ -1,6 +1,13 @@
+# config/routes.rb
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'pages#home'
+  get '/home', to: 'pages#home'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Warehouses with nested Items
+  resources :warehouses do
+    resources :items, only: %i[index show new create]
+  end
+
+  # Items
+  resources :items, only: %i[edit update delete]
 end
