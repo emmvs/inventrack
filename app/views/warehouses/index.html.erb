@@ -6,6 +6,7 @@
 <div class="flex-container">
   <div class="grid">
   <%= link_to "New Warehouse", new_warehouse_path %>
+  <%= link_to "Add new item 🎱 🐝 👕 🖼", new_item_path %>
     <% @warehouses.each do |warehouse| %>
       <%= link_to warehouse_path(warehouse) do %>
         <div class="card">

@@ -6,14 +6,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @warehouse = Warehouse.find(params[:warehouse_id])
   end
 
   def create
     @item = Item.new(item_params)
-    @warehouse = Warehouse.find(params[:warehouse_id])
+    @warehouse = Warehouse.find(params[:item][:warehouse_id])
     @item.warehouse = @warehouse
-    if @item.save
+    if @item.save!
       redirect_to warehouse_path(@warehouse)
     else
       render :new
@@ -44,6 +43,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :type_of_item)
+    params.require(:item).permit(:name, :type_of_item, :warehouse_id)
   end
 end
